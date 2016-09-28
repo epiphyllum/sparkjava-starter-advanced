@@ -22,39 +22,19 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.controllers
+package com.thoughtlogix.advancedstarter.settings
 
-import com.infoquant.gf.server.other.htmlOut
-import com.thoughtlogix.advancedstarter.db.JPA
-import org.slf4j.LoggerFactory
-import spark.Spark.get
+import com.thoughtlogix.advancedstarter.settings.SystemSettings
 
-class MainController(jpa: JPA) : AbstractController(jpa) {
-    override val logger = LoggerFactory.getLogger(MainController::class.java)
+open class Settings(var systemSettings: SystemSettings = SystemSettings(),
+                    var systemSettingsPath: String = "",
+                    var userSettingsPath: String = "") {
 
-    init {
-        basePath = "/"
+    fun load() {
+        systemSettings.load()
+    }
 
-        initFilters(arrayOf(basePath, basePath + "*"))
-
-        get(basePath + "/") { rq, rs ->
-            model.put("pageTitle", "Spark Advanced Starter")
-            htmlOut(model, basePath + "public/index.peb");
-        }
-
-        get(basePath + "/features") { rq, rs ->
-            model.put("pageTitle", "Features")
-            htmlOut(model, basePath + "public/features.peb");
-        }
-
-        get(basePath + "/about") { rq, rs ->
-            model.put("pageTitle", "About Us")
-            htmlOut(model, basePath + "public/about.peb");
-        }
-
-        get(basePath + "/contact") { rq, rs ->
-            model.put("pageTitle", "Contact Us")
-            htmlOut(model, basePath + "public/contact.peb");
-        }
+    fun save() {
+        systemSettings.save()
     }
 }

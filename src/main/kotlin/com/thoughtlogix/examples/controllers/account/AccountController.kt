@@ -22,16 +22,26 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.app.settings.system
+package com.thoughtlogix.examples.controllers
 
-import com.thoughtlogix.advancedstarter.app.settings.BaseSettings
+import com.infoquant.gf.server.other.htmlOut
+import com.thoughtlogix.advancedstarter.db.JPA
+import com.thoughtlogix.examples.controllers.MainController
+import org.slf4j.LoggerFactory
+import spark.Spark.get
 
-class SystemSettings(var generalSettings: GeneralSettings = GeneralSettings(),
-                     var databaseSettings: DatabaseSettings = DatabaseSettings(),
-                     var networkSettings: NetworkSettings = NetworkSettings()) : BaseSettings() {
+class AccountController(jpa: JPA) : Controller(jpa) {
+    override val logger = LoggerFactory.getLogger(MainController::class.java)
 
     init {
-        fileName = "systemSettings.json";
-    }
+        basePath = "/account"
 
+        initCommonFilters(basePath)
+
+        get(basePath + "") { rq, rs ->
+            model.put("pageTitle", "Account")
+            htmlOut(model, basePath + "/index.peb");
+        }
+
+    }
 }

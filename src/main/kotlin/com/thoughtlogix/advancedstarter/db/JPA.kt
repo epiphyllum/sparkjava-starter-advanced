@@ -24,7 +24,7 @@
 
 package com.thoughtlogix.advancedstarter.db
 
-import com.thoughtlogix.advancedstarter.app.settings.system.DatabaseSettings
+import com.thoughtlogix.advancedstarter.settings.system.DatabaseSettings
 import org.slf4j.LoggerFactory
 import java.util.*
 import javax.persistence.EntityManager

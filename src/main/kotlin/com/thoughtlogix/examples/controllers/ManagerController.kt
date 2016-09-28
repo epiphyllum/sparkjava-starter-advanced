@@ -28,7 +28,7 @@ import com.infoquant.gf.server.other.htmlOut
 import com.infoquant.gf.server.other.parseInput
 import com.infoquant.gf.server.other.serializedOut
 import com.thoughtlogix.advancedstarter.Lang
-import com.thoughtlogix.advancedstarter.controllers.AbstractController
+import com.thoughtlogix.examples.controllers.Controller
 import com.thoughtlogix.advancedstarter.db.JPA
 import com.thoughtlogix.advancedstarter.db.PagedData
 import com.thoughtlogix.advancedstarter.models.core.Model
@@ -40,7 +40,7 @@ import java.util.*
 import javax.validation.Validation
 import javax.validation.Validator
 
-open class ManagerController<T : Model>(protected var cls: Class<T>, jpa: JPA) : AbstractController(jpa) {
+open class ManagerController<T : Model>(protected var cls: Class<T>, jpa: JPA) : Controller(jpa) {
     var service: Service<T>? = null
     protected var objName: String = ""
     protected var className: String = ""

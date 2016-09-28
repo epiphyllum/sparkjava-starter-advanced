@@ -25,14 +25,8 @@
 package com.thoughtlogix.advancedstarter
 
 import com.beust.jcommander.JCommander
-import com.infoquant.gf.server.controllers.AuthController
-import com.thoughtlogix.advancedstarter.app.settings.Settings
-import com.thoughtlogix.advancedstarter.controllers.AccountController
-import com.thoughtlogix.advancedstarter.controllers.ErrorController
-import com.thoughtlogix.advancedstarter.controllers.MainController
-import com.thoughtlogix.advancedstarter.controllers.TodoController
+import com.thoughtlogix.advancedstarter.settings.Settings
 import com.thoughtlogix.advancedstarter.db.JPA
-import com.thoughtlogix.advancedstarter.db.SeedData
 import com.thoughtlogix.advancedstarter.server.CommandLineOptions
 import com.thoughtlogix.advancedstarter.utils.Memory
 import org.slf4j.LoggerFactory
@@ -41,10 +35,10 @@ import spark.debug.DebugScreen.enableDebugScreen
 import spark.servlet.SparkApplication
 import java.util.*
 
-class Server : SparkApplication {
+open class Server : SparkApplication {
     val logger = LoggerFactory.getLogger(Server::class.java)
-    private val settings: Settings = Settings();
-    private var jpa: JPA? = null
+    protected open val settings: Settings = Settings();
+    protected var jpa: JPA? = null
 
     /**
      * Constructor to standalone deployment using embedded jetty web server.
@@ -52,7 +46,6 @@ class Server : SparkApplication {
      * @param args Command line options
      */
     constructor(args: Array<String>) {
-        initServer(args)
     }
 
     /**
@@ -68,10 +61,7 @@ class Server : SparkApplication {
         }
     }
 
-
-    private fun initServer(args: Array<String>) {
-        settings.load()
-        parseArgs(args);
+    protected fun initServer() {
         Server.isDevMode = options.dev;
 
         if (Server.isDevMode) {
@@ -81,36 +71,22 @@ class Server : SparkApplication {
         port(options.serverPort.toInt())
 
         if (Server.isDevMode) {
-            externalStaticFileLocation("src/main/resources/public/")
+            externalStaticFileLocation("src/main/resources" + options.serverStaticPath)
         } else {
             staticFileLocation(options.serverStaticPath)
         }
-
-        setupDatabase()
-        initControllers();
-        displayStartupMessage();
-        displaySystemProperties()
     }
 
-    private fun setupDatabase() {
-        jpa = JPA(settings.systemSettings.databaseSettings)
-        //Migrations.runAll(settings.getDatabaseSettings());
-        val seedData = SeedData(jpa as JPA)
-        seedData.loadData(true)
-    }
-
-    private fun displayStartupMessage() {
+    protected fun displayStartupMessage(title: String) {
         logger.info("=============================================================")
-        logger.info("Spark Advanced Starter Started")
-        // @Todo: Add versioning
-        //logger.info("Version: " + App.product?.version)
+        logger.info(title)
         logger.info("Date: " + Date().toString())
         logger.info("OS: " + System.getProperty("os.name"))
         logger.info("Initial Memory: " + Memory.used + "Mb")
         logger.info("=============================================================")
     }
 
-    private fun displaySystemProperties() {
+    protected fun displaySystemProperties() {
         val props = System.getProperties()
         val e = props.propertyNames()
 
@@ -120,15 +96,7 @@ class Server : SparkApplication {
         }
     }
 
-    private fun initControllers() {
-        MainController(jpa!!)
-        AuthController(jpa!!)
-        TodoController(jpa!!)
-        AccountController(jpa!!)
-        ErrorController(jpa!!)
-    }
-
-    private fun parseArgs(args: Array<String>) {
+    protected fun parseArgs(args: Array<String>) {
         val options = CommandLineOptions()
         JCommander(options, *args)
         Server.options = options

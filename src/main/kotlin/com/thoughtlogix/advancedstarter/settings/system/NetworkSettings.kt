@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.app.settings.system
+package com.thoughtlogix.advancedstarter.settings.system
 
 class NetworkSettings {
 

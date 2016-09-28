@@ -22,13 +22,13 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.controllers
+package com.thoughtlogix.examples.controllers
 
 import com.infoquant.gf.server.controllers.manager.ManagerController
 import com.thoughtlogix.advancedstarter.Lang
 import com.thoughtlogix.advancedstarter.db.JPA
-import com.thoughtlogix.advancedstarter.models.examples.Todo
-import com.thoughtlogix.advancedstarter.services.db.TodoDbService
+import com.thoughtlogix.examples.models.Todo
+import com.thoughtlogix.examples.services.db.TodoDbService
 
 class TodoController(jpa: JPA) : ManagerController<Todo>(Todo::class.java, jpa) {
 

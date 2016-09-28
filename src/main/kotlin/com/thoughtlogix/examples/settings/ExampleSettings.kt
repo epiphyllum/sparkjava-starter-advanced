@@ -22,10 +22,13 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter
+package com.thoughtlogix.examples.settings
 
-import com.thoughtlogix.examples.ExampleServer
+import com.thoughtlogix.advancedstarter.settings.Settings
 
-fun main(args: Array<String>) {
-    ExampleServer(args)
+class ExampleSettings : Settings() {
+
+    init {
+        systemSettings.generalSettings.title = "Hello"
+    }
 }

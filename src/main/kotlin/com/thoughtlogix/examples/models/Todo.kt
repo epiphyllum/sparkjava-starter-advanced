@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.models.examples
+package com.thoughtlogix.examples.models
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.thoughtlogix.advancedstarter.db.JPA

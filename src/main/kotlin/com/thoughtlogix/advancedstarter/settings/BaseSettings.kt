@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.app.settings
+package com.thoughtlogix.advancedstarter.settings
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.databind.ObjectMapper

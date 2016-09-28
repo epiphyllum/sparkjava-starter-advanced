@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.controllers
+package com.thoughtlogix.examples.controllers
 
 import com.thoughtlogix.advancedstarter.db.JPA
 import com.thoughtlogix.advancedstarter.db.PageParams
@@ -45,9 +45,9 @@ import java.io.IOException
 import java.io.InputStream
 import java.util.*
 
-open class AbstractController @JvmOverloads constructor(protected var jpa: JPA? = null) {
+open class Controller @JvmOverloads constructor(protected var jpa: JPA? = null) {
 
-    open val logger = LoggerFactory.getLogger(AbstractController::class.java)
+    open val logger = LoggerFactory.getLogger(Controller::class.java)
     var flash = Flash
     protected var basePath = ""
     protected var model = ContextModel()

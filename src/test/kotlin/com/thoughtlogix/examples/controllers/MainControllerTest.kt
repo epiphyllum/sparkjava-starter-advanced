@@ -22,9 +22,10 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.controllers
+package com.thoughtlogix.examples.controllers
 
 import com.thoughtlogix.advancedstarter.Server
+import com.thoughtlogix.examples.ExampleServer
 import org.assertj.core.api.Assertions.assertThat
 import org.fluentlenium.adapter.FluentTestNg
 import org.fluentlenium.adapter.util.SharedDriver
@@ -44,7 +45,7 @@ class MainControllerTest : FluentTestNg() {
     @Throws(Exception::class)
     fun setUp() {
         webDriver = HtmlUnitDriver()
-        server = Server(arrayOf(""))
+        server = ExampleServer(arrayOf(""))
     }
 
     // @Test(groups = arrayOf("integration"))

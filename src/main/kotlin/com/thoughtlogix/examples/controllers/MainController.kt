@@ -22,15 +22,40 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.app.settings.system
+package com.thoughtlogix.examples.controllers
 
-class GeneralSettings {
+import com.infoquant.gf.server.other.htmlOut
+import com.thoughtlogix.examples.controllers.Controller
+import com.thoughtlogix.advancedstarter.db.JPA
+import org.slf4j.LoggerFactory
+import spark.Spark.get
 
-    var isDebug: Boolean = false
+class MainController(jpa: JPA) : Controller(jpa) {
+    override val logger = LoggerFactory.getLogger(MainController::class.java)
 
-    var sendErrorViaEmail = true
+    init {
+        basePath = "/"
 
-    var sendErrorViaWebservice = false
+        initFilters(arrayOf(basePath, basePath + "*"))
 
+        get(basePath + "/") { rq, rs ->
+            model.put("pageTitle", "Spark Advanced Starter")
+            htmlOut(model, basePath + "public/index.peb");
+        }
 
+        get(basePath + "/features") { rq, rs ->
+            model.put("pageTitle", "Features")
+            htmlOut(model, basePath + "public/features.peb");
+        }
+
+        get(basePath + "/about") { rq, rs ->
+            model.put("pageTitle", "About Us")
+            htmlOut(model, basePath + "public/about.peb");
+        }
+
+        get(basePath + "/contact") { rq, rs ->
+            model.put("pageTitle", "Contact Us")
+            htmlOut(model, basePath + "public/contact.peb");
+        }
+    }
 }

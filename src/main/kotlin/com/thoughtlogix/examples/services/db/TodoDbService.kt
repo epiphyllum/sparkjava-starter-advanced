@@ -22,13 +22,14 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.services.db
+package com.thoughtlogix.examples.services.db
 
 import com.thoughtlogix.advancedstarter.db.JPA
 import com.thoughtlogix.advancedstarter.db.PageParams
 import com.thoughtlogix.advancedstarter.db.PagedData
-import com.thoughtlogix.advancedstarter.models.examples.Todo
+import com.thoughtlogix.examples.models.Todo
 import com.thoughtlogix.advancedstarter.services.Service
+import com.thoughtlogix.advancedstarter.services.db.AbstractDbService
 import org.apache.commons.lang3.StringUtils
 import java.util.*
 

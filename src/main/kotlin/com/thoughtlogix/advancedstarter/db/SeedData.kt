@@ -24,7 +24,7 @@
 
 package com.thoughtlogix.advancedstarter.db
 
-import com.thoughtlogix.advancedstarter.models.examples.Todo
+import com.thoughtlogix.examples.models.Todo
 import com.thoughtlogix.advancedstarter.models.users.Role
 import com.thoughtlogix.advancedstarter.models.users.Team
 import com.thoughtlogix.advancedstarter.models.users.User

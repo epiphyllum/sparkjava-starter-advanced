@@ -41,7 +41,7 @@
         <class>com.thoughtlogix.advancedstarter.models.users.Permission</class>
         <class>com.thoughtlogix.advancedstarter.models.users.Team</class>
         <class>com.thoughtlogix.advancedstarter.models.users.User</class>
-        <class>com.thoughtlogix.advancedstarter.models.examples.Todo</class>
+        <class>com.thoughtlogix.examples.models.Todo</class>
         <properties>
         </properties>
     </persistence-unit>

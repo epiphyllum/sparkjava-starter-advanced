@@ -22,19 +22,11 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.app.settings
+package com.thoughtlogix.advancedstarter.settings.system
 
-import com.thoughtlogix.advancedstarter.app.settings.system.SystemSettings
+class GeneralSettings {
 
-class Settings(var systemSettings: SystemSettings = SystemSettings(),
-               var systemSettingsPath: String = "",
-               var userSettingsPath: String = "") {
+    var title = ""
+    var description =""
 
-    fun load() {
-        systemSettings.load()
-    }
-
-    fun save() {
-        systemSettings.save()
-    }
 }

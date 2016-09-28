@@ -24,7 +24,7 @@
 
 package com.thoughtlogix.advancedstarter.db.engines
 
-import com.thoughtlogix.advancedstarter.app.settings.system.DatabaseSettings
+import com.thoughtlogix.advancedstarter.settings.system.DatabaseSettings
 
 class SqlServerDatabaseEngine : DatabaseEngine {
 

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.advancedstarter.app.settings.system
+package com.thoughtlogix.advancedstarter.settings.system
 
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.thoughtlogix.advancedstarter.db.engines.DatabaseEngineFactory

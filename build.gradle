@@ -51,8 +51,8 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'kotlin'
 apply plugin: 'application'
-apply plugin: 'project-report'
 apply plugin: 'idea'
+apply plugin: 'project-report'
 apply plugin: "jacoco"
 
 sourceCompatibility = 1.8
