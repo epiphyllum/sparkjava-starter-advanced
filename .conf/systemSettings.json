@@ -1,0 +1,23 @@
+{
+  "generalSettings" : {
+    "title" : "Hello",
+    "description" : ""
+  },
+  "databaseSettings" : {
+    "databaseEngineId" : "H2",
+    "database" : "sas",
+    "host" : "",
+    "port" : "",
+    "username" : "sa",
+    "password" : ""
+  },
+  "networkSettings" : {
+    "host" : "localhost",
+    "port" : "7011",
+    "staticFolder" : "/public",
+    "smtpHost" : "",
+    "smtpPort" : "",
+    "smtpUsername" : "",
+    "smtpPassword" : ""
+  }
+}

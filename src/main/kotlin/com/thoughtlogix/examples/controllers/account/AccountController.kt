@@ -25,6 +25,7 @@
 package com.thoughtlogix.examples.controllers
 
 import com.infoquant.gf.server.other.htmlOut
+import com.thoughtlogix.advancedstarter.controllers.Controller
 import com.thoughtlogix.advancedstarter.db.JPA
 import com.thoughtlogix.examples.controllers.MainController
 import org.slf4j.LoggerFactory

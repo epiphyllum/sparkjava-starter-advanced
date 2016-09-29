@@ -24,11 +24,11 @@
 
 package com.thoughtlogix.examples
 
-import com.thoughtlogix.examples.controllers.AuthController
+import com.thoughtlogix.advancedstarter.controllers.AuthController
 import com.thoughtlogix.advancedstarter.Server
 import com.thoughtlogix.advancedstarter.settings.Settings
 import com.thoughtlogix.examples.controllers.AccountController
-import com.thoughtlogix.examples.controllers.ErrorController
+import com.thoughtlogix.advancedstarter.controllers.ErrorController
 import com.thoughtlogix.examples.controllers.MainController
 import com.thoughtlogix.examples.controllers.TodoController
 import com.thoughtlogix.advancedstarter.db.JPA

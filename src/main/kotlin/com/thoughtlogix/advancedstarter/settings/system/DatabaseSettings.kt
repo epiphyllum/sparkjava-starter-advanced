@@ -27,45 +27,50 @@ package com.thoughtlogix.advancedstarter.settings.system
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.thoughtlogix.advancedstarter.db.engines.DatabaseEngineFactory
 import com.thoughtlogix.advancedstarter.db.engines.DatabaseEngineId
+import org.hibernate.dialect.Dialect
+import org.hibernate.dialect.H2Dialect
 
 class DatabaseSettings {
 
     var databaseEngineId = DatabaseEngineId.H2
-    var database = "sas"
+    var database = "advancedstarter"
     var host = ""
     var port = ""
     var username = "sa"
     var password = ""
 
     //    var  databaseEngineId:DatabaseEngineId = DatabaseEngineId.MYSQL
-    //    var database = "gf"
+    //    var database = "advancedstarter"
     //    var host = "localhost"
     //    var port = "3306"
-    //    var username = "iq"
-    //    var password = "Uxecfc19741974"
+    //    var username = "tlogix"
+    //    var password = ""
 
     //    var databaseEngineId: DatabaseEngineId = DatabaseEngineId.POSTGRES
-    //    var database = "gf"
+    //    var database = "advancedstarter"
     //    var host = "localhost"
     //    var port = "5432"
-    //    var username = "iq"
-    //    var password = "Uxecfc19741974"
+    //    var username = "tlogix"
+    //    var password = ""
 
     //    private  databaseEngineId:DatabaseEngineId = DatabaseEngineId.SQLSERVER
-    //    var database = "gf"
+    //    var database = "advancedstarter"
     //    var host = "localhost"
     //    var port = "1433"
-    //    var username = "iq"
-    //    var password = "Uxecfc19741974"
+    //    var username = "tlogix"
+    //    var password = ""
 
     @JsonIgnore
-    var driver = DatabaseEngineFactory.create(this.databaseEngineId).driver
+    var driver: String = ""
+        get() = DatabaseEngineFactory.create(this.databaseEngineId).driver
 
     @JsonIgnore
-    var url = DatabaseEngineFactory.create(this.databaseEngineId).getUrl(this)
+    var url: String = ""
+        get() = DatabaseEngineFactory.create(this.databaseEngineId).getUrl(this)
 
     @JsonIgnore
-    var dialect = DatabaseEngineFactory.create(this.databaseEngineId).dialect
+    var dialect: String = ""
+        get() = DatabaseEngineFactory.create(this.databaseEngineId).dialect
 
     fun updateEngine() {
         driver = DatabaseEngineFactory.create(this.databaseEngineId).driver

@@ -22,14 +22,14 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.examples.controllers
+package com.thoughtlogix.advancedstarter.controllers
 
 import com.infoquant.gf.server.other.htmlOut
 import com.infoquant.gf.server.other.out
 import com.infoquant.gf.server.other.parseInput
 import com.infoquant.gf.server.other.serializedOut
 import com.thoughtlogix.advancedstarter.Lang
-import com.thoughtlogix.examples.controllers.Controller
+import com.thoughtlogix.advancedstarter.controllers.Controller
 import com.thoughtlogix.advancedstarter.db.JPA
 import com.thoughtlogix.advancedstarter.models.core.Profile
 import com.thoughtlogix.advancedstarter.models.forms.ResetPasswordForm

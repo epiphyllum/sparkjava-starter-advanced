@@ -22,10 +22,10 @@
  * SOFTWARE.
  */
 
-package com.thoughtlogix.examples.controllers
+package com.thoughtlogix.advancedstarter.controllers
 
 import com.infoquant.gf.server.other.htmlOut
-import com.thoughtlogix.examples.controllers.Controller
+import com.thoughtlogix.advancedstarter.controllers.Controller
 import com.thoughtlogix.advancedstarter.db.JPA
 import org.slf4j.LoggerFactory
 import spark.Spark.get
