@@ -32,29 +32,29 @@ class CommandLineOptions {
     // General
     ////////////////////////////////////////////////////////////////////
     @Parameter(names = arrayOf("--help"), help = true)
-    private val help: Boolean = false
+    private var help: Boolean = false
     @Parameter(names = arrayOf("--dev"), description = "Dev mode", hidden = true, arity = 1)
-    val dev = false
+    var dev = false
 
     ////////////////////////////////////////////////////////////////////
     // Server
     ////////////////////////////////////////////////////////////////////
     @Parameter(names = arrayOf("--server-host"), description = "Bind server to this host")
-    val serverHost: String = "localhost"
+    var serverHost: String = "localhost"
     @Parameter(names = arrayOf("--server-port"), description = "Bind server to this port")
-    val serverPort: String = "7011"
+    var serverPort: String = "7011"
     @Parameter(names = arrayOf("--server-static"), description = "The path to static resources")
-    val serverStaticPath: String = "/public"
+    var serverStaticPath: String = "/public"
 
     ////////////////////////////////////////////////////////////////////
     // Smtp Mailer
     ////////////////////////////////////////////////////////////////////
     @Parameter(names = arrayOf("--smtp-host"), description = "The SMTP hostname or IP")
-    val smtpHost: String = ""
+    var smtpHost: String = ""
     @Parameter(names = arrayOf("--smtp-port"), description = "The SMTP server port")
-    val smtpPort: String = ""
+    var smtpPort: String = ""
     @Parameter(names = arrayOf("--smtp-username"), description = "The SMTP username")
-    val smtpUsername: String = ""
+    var smtpUsername: String = ""
     @Parameter(names = arrayOf("--smtp-password"), description = "The SMTP password")
-    val smtpPassword: String = ""
+    var smtpPassword: String = ""
 }

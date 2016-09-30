@@ -19,3 +19,4 @@ dist/
 out/
 resources/db/sas.mv.db
 resources/db/sas.trace.db
+bin
