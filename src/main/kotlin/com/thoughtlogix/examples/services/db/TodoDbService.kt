@@ -72,8 +72,8 @@ class TodoDbService(jpa: JPA) : AbstractDbService(jpa), Service<Todo> {
             query.setParameter("filter", filterWildcard(pageParams))
         }
 
-        val logs = query.setFirstResult(pageParams.skip).setMaxResults(pageParams.size).resultList
-        return PagedData(logs, countAllEntities<Any>("log"))
+        val todos = query.setFirstResult(pageParams.skip).setMaxResults(pageParams.size).resultList
+        return PagedData(todos, countAllEntities<Any>("todo"))
     }
 
     ////////////////////////////////////////////////////////////////////
