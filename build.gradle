@@ -29,8 +29,8 @@ version '1.0-SNAPSHOT'
 // COMMON BUILD SCRIPT SETUP
 ////////////////////////////////////////////////////////////////////
 buildscript {
-    ext.kotlin_version = '1.0.4'
-    ext.spark_version = '2.5'
+    ext.kotlin_version = '1.0.6'
+    ext.spark_version = '2.5.4'
 
     repositories {
         maven {
